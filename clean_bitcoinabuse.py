@@ -21,7 +21,7 @@ import json
 
 from os import path
 #Bitcoin_abuse_api_key
-api_token="IlgGuZgN7QliY52WGD1PXMM16AsDTd2vEjjCnxwgfM2fSiPxYegC1wgeIEPW"
+api_token="" #add bitcoin abuse key
 #Download file from bitcoinabuse every day
 today=datetime.datetime.now().strftime("%Y-%m-%d")
 url_bitcoinabuse="https://www.bitcoinabuse.com/api/download/1d?api_token="+api_token
@@ -29,7 +29,7 @@ out_file = 'data'+"_"+today+"_1d"+".csv"
 os.system("wget -O {0} {1}".format(out_file, url_bitcoinabuse))
 #Abuse Types
 url_bitcoinabuse_type="https://www.bitcoinabuse.com/api/abuse-types?api_token="+api_token
-bitcoinabuse_types=requests.get("https://www.bitcoinabuse.com/api/abuse-types?api_token=IlgGuZgN7QliY52WGD1PXMM16AsDTd2vEjjCnxwgfM2fSiPxYegC1wgeIEPW")
+bitcoinabuse_types=requests.get("https://www.bitcoinabuse.com/api/abuse-types?api_token="+str(api_token))
 alist=bitcoinabuse_types.json()
 
 
