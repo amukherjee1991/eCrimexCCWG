@@ -22,7 +22,7 @@ import re
 
 
 #eCrimex API
-eCrimex_Api="165c79a6a354f443edfd5119a7ae3eea637f756b"
+eCrimex_Api="" # <- my api goes here
 eCrimex_api_url="http://api.ecrimex.net/groups/bc0e1b369b881717a42fb79ce086f9e88213845a"
 # eCrimex_api_url="http://api.sandbox.ecrimex.net/groups/dcc920f93ebdccd939030a755febcd57db629dd9"
 headers = {
