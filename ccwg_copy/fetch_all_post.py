@@ -18,7 +18,7 @@ def build_headers(token):
 def build_initial_payload():
     return {
         "filters": {"createdAt": {"from": 1362627971, "to": 1709757102}},
-        "sorts": [{"sortBy": "createdAt", "sortOrder": "asc", "limit": 100}],
+        "sorts": [{"sortBy": "createdAt", "sortOrder": "asc"}],
     }
 
 
@@ -83,7 +83,7 @@ def main():
     token, output_file = get_command_line_arguments()
     headers = build_headers(token)
     initial_payload = build_initial_payload()
-    initial_url = "https://ecrimex.net/api/v1/cryptocurrency-addresses/search"
+    initial_url = "https://ecrimex.net/api/v1/cryptocurrency-addresses/search?limit=500"
 
     fetch_all_pages(initial_url, headers, initial_payload, output_file)
     print(f"Data has been saved to {output_file}")
