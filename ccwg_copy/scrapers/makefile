@@ -25,7 +25,7 @@ create_output_dir:
 .PHONY: run
 run:
 	@echo "Running the Python script..."
-	pipenv run python script.py $(BEARER_TOKEN) $(OUTPUT_DIR)/all_data_ccwg.csv
+	pipenv run python fetch_all_post.py $(BEARER_TOKEN) $(OUTPUT_DIR)/all_data_ccwg.csv
 
 # Target for activating the pipenv shell
 .PHONY: shell
