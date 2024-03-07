@@ -12,7 +12,7 @@ file_path = sys.argv[1]
 output_directory = sys.argv[2]
 
 # Ensure the output directory exists
-output_directory = os.path.join(output_directory, "files_by_source")
+output_directory = os.path.join(output_directory)
 os.makedirs(output_directory, exist_ok=True)
 
 # Load the dataset
