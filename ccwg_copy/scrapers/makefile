@@ -2,8 +2,8 @@
 
 # Specify the bearer token and output file name
 BEARER_TOKEN := 165c79a6a354f443edfd5119a7ae3eea637f756b
-OUTPUT_DIR := ./output_data
-OUTPUT_FILE := output.csv
+OUTPUT_DIR := output_data
+OUTPUT_FILE := $(OUTPUT_DIR)/output.csv
 
 # Default target to create output directory, setup environment, and run the script
 .PHONY: all
@@ -23,7 +23,7 @@ create_output_dir:
 
 # Target for running the Python script
 .PHONY: run
-run:
+run:create_output_dir
 	@echo "Running the Python script..."
 	pipenv run python fetch_all_post.py $(BEARER_TOKEN) $(OUTPUT_FILE)
 
