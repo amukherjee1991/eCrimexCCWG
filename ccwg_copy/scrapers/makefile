@@ -1,9 +1,9 @@
 # Makefile
 
 # Specify the bearer token and output file name
-BEARER_TOKEN := your_bearer_token_here
-OUTPUT_DIR := output_data
-# OUTPUT_FILE := $(OUTPUT_DIR)/output.csv
+BEARER_TOKEN := 165c79a6a354f443edfd5119a7ae3eea637f756b
+OUTPUT_DIR := ./output_data
+OUTPUT_FILE := output.csv
 
 # Default target to create output directory, setup environment, and run the script
 .PHONY: all
@@ -25,7 +25,7 @@ create_output_dir:
 .PHONY: run
 run:
 	@echo "Running the Python script..."
-	pipenv run python fetch_all_post.py $(BEARER_TOKEN) $(OUTPUT_DIR)/all_data_ccwg.csv
+	pipenv run python fetch_all_post.py $(BEARER_TOKEN) $(OUTPUT_FILE)
 
 # Target for activating the pipenv shell
 .PHONY: shell
