@@ -2,6 +2,7 @@ import requests
 import json
 import sys
 import csv
+import time
 
 
 def get_command_line_arguments():
@@ -62,6 +63,7 @@ def fetch_all_pages(initial_url, headers, initial_payload, output_file):
         url = initial_url
         payload = json.dumps(initial_payload)
         while url:
+            time.sleep(10)
             print(f"Fetching data from: {url}")
             if payload:
                 response = requests.post(url, headers=headers, data=payload)
