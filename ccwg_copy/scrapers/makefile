@@ -13,7 +13,9 @@ all: setup create_output_dir run
 .PHONY: setup
 setup:
 	@echo "Setting up the pipenv environment..."
-	pipenv install
+	pip install pipreqs
+	pipreqs ./
+	pipenv install -r requirments.txt
 
 # Target to create the output directory
 .PHONY: create_output_dir
