@@ -19,7 +19,7 @@ setup:
 
 # Target to create the output directory
 .PHONY: create_output_dir
-create_output_dir:
+create_output_dir:setup
 	@echo "Creating output directory..."
 	mkdir -p $(OUTPUT_DIR)
 
